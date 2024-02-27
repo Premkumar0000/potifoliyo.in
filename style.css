@@ -9,6 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -239,6 +240,7 @@ section {
   cursor: pointer;
 }
 
+
 .btn-color-1,
 .btn-color-2:hover {
   background: rgb(53, 53, 53);
@@ -247,8 +249,8 @@ section {
 }
 
 .btn-color-1:hover {
-  /* background: rgb(0, 0, 0); */
-  background-color: green;
+  background: rgb(0, 0, 0);
+  /* background-color: green; */
 }
 
 .btn-color-2 {
@@ -441,6 +443,7 @@ footer p {
     .about-containers {
       flex-wrap: wrap;
     }
+    
   }
   
   @media screen and (max-width: 1200px) {
@@ -476,8 +479,40 @@ footer p {
     .about-containers {
       margin-top: 0;
     }
+    
   }
   
+ /* Common styles for the circle */
+/* Common styles for the circle container */
+.circle {
+  width: 350px; /* Default width */
+  height: 350px; /* Default height */
+  border-radius: 50%; /* Make it a circle */
+  background-color: rgb(243, 243, 115); /* Background color of the circle */
+  position: relative; /* Positioning context for child elements */
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Styles for the image inside the circle */
+.circle-img {
+  position: absolute; /* Position the image absolutely */
+  top: 50%; /* Place the top of the image at the vertical center */
+  left: 50%; /* Place the left side of the image at the horizontal center */
+  transform: translate(-50%, -50%); /* Adjust the image position to center it */
+  max-width: 100%; /* Ensure the image does not exceed the circle's bounds */
+  max-height: 100%; /* Ensure the image does not exceed the circle's bounds */
+}
+
+
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+  .circle {
+    width: 150px; /* Smaller width for phones */
+    height: 150px; /* Smaller height for phones */
+  }
+}
+
   @media screen and (max-width: 600px) {
     #contact,
     footer {
